@@ -1,0 +1,41 @@
+[user]
+	name = Seu Nome
+	email = seu.email@email.com
+[color]
+    ui = auto
+    diff = auto
+    status = auto
+    branch = auto
+[alias]
+    b = branch
+    br = branch --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(contents:subject) %(color:green)(%(committerdate:relative)) [%(authorname)]' --sort=-committerdate
+    cm = commit -m
+    s = status -sb
+    st = status
+    co = checkout
+    ci = commit
+    remotes = remote -v
+    save = !git add -A && git commit -m 'tarefa: commit save point'
+    undo = reset HEAD~1 --mixed
+    reseta = !git reset --hard
+    done = !git push origin HEAD
+    dv  = difftool -t vimdiff -y
+    gl = config --global -l
+    se = !git rev-list --all | xargs git grep -F
+    l = log --all --graph --decorate --oneline --abbrev-commit
+    lg = !git log --pretty=format:\"%C(magenta)%h%Creset -%C(red)%d%Creset %s %C(dim green)(%cr) [%an]\" --abbrev-commit -30
+    last = log -1 HEAD
+    unstage = reset HEAD --
+    brav = branch -vva
+    grepn = grep -n
+    log1 = log --pretty=oneline --abbrev-commit
+    rlog = log --pretty=format:\"%h %Cblue%cr%Creset %cn %Cgreen%s%Creset\"
+   tag1 = tag | sort -n -t . -k 1,1 -k 2,2 -k 3,3
+[http]
+	sslVerify = false
+[core]
+	compression = 0
+[push]
+	default = simple
+[help]
+	autocorrect = 20
